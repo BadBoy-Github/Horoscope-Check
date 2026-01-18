@@ -3,6 +3,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 .transiti {
@@ -28,7 +29,6 @@
     width: 1000px;
     height: 500px;
     border-radius: 24px;
-    overflow: hidden;
 }
 
 .heading {
@@ -50,8 +50,187 @@
 .button-round {
     width: 20px;
     height: 20px;
-    background-color: black;
     border-radius: 30px;
-    transition-duration: 0.4s;
-    transition-delay: 0.2s;
+    transition-duration: 0.6s;
+    transition-delay: 0.4s;
+}
+
+
+/* Card Body */
+.card-body {
+    width: 100%;
+    height: 340px;
+    margin-top: 10px;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 60% 40%;
+}
+
+.card-body-left {
+    
+}
+
+.sign-select,
+.date-select {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.sign-sign,
+.date-date {
+    font-weight: 500;
+}
+
+.horoscope-data {
+    margin-left: 20px;
+    width: 500px;
+    margin-top: 20px;
+}
+
+.horoscope-data-emoji {
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-2px,2px);
+    }
+
+    50% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+.horoscope-data-error-emoji {
+    margin-left: 4px;
+    display: inline-block;
+    animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+.card-body-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-para {
+    font-style: italic;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.input-parent {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.label {
+    font-size: 16px;
+
+}
+
+/* Custom Select */
+.custom-select {
+    position: relative;
+    width: 200px;
+    font-size: 14px;
+}
+
+.select-trigger {
+    padding: 10px 14px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.arrow {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.select-options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.select-options.open {
+    display: flex;
+}
+
+.option {
+    padding: 6px 14px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: rgba(59, 130, 246, 0.2);
+}
+
+.button {
+    width: 340px;
+    height: 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+
+.btn-para {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-left: 20px;
+}
+
+.btn-icon {
+    font-size: 20px;
+    margin-right: 20px;
 }

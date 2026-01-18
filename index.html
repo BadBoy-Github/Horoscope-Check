@@ -1,9 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Horoscope Check</title>
+
+    <!-- Link Google Fonts - Ububtu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link FOntAwesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -12,10 +23,57 @@
     <div class="parent transiti" id="parent">
       <div class="card-parent transiti" id="cardParent">
         <div class="card-top">
-          <h1 class="heading transiti" id="heading">Horoscope Checker</h1>
+          <h1 class="heading transiti" id="heading">Check Your Fate Today</h1>
           <button class="btn-toggle transiti" id="btnToggle">
             <div class="button-round" id="btnRound"></div>
           </button>
+        </div>
+        <p class="card-para transiti" id="cardPara">
+          "One sign, one click, and endless possibilities unfold as the stars
+          align to guide your choices, moods, and moments throughout the day."
+        </p>
+        <div class="card-body">
+          <div class="card-body-left">
+           <div class="sign-select transiti" id="signText">
+             <p class="sign-para">Selected Sign: </p>
+            <p class="sign-sign transiti" id="signSign">-</p>
+           </div>
+            <div class="date-select transiti" id="dateText">
+             <p class="date-para">Date: </p>
+            <p class="date-date transiti" id="dateDate">-</p>
+           </div>
+           <div class="horoscope-data transiti" id="horoscopeData"> <span class="transiti"></span></div>
+          </div>
+          <div class="card-body-right">
+            <div class="input-parent">
+              <p class="label transiti" id="label">Select your sign:</p>
+              <div class="custom-select transiti" id="customSelect">
+                <div class="select-trigger transiti" id="selectTrigger">
+                  <span id="selectedValue">Aries</span>
+                  <span class="arrow">▾</span>
+                </div>
+
+                <div class="select-options transiti" id="selectOptions">
+                  <div class="option">Aries</div>
+                  <div class="option">Taurus</div>
+                  <div class="option">Gemini</div>
+                  <div class="option">Cancer</div>
+                  <div class="option">Leo</div>
+                  <div class="option">Virgo</div>
+                  <div class="option">Libra</div>
+                  <div class="option">Scorpio</div>
+                  <div class="option">Sagittarius</div>
+                  <div class="option">Capricorn</div>
+                  <div class="option">Aquarius</div>
+                  <div class="option">Pisces</div>
+                </div>
+              </div>
+            </div>
+            <div class="button transiti" id="button">
+              <p class="btn-para">Search</p>
+              <i class="fa-solid fa-magnifying-glass btn-icon"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
