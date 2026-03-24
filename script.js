@@ -111,9 +111,9 @@ options.forEach(option => {
 });
 
 button.addEventListener("click", async () => {
-    const url = `https://corsproxy.io/?${encodeURIComponent(
-        `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${selectedSign.toUpperCase()}&day=TODAY`
-    )}`;
+    const apiUrl = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${selectedSign.toUpperCase()}&day=TODAY`;
+    // Using allorigins.win as a more reliable CORS proxy
+    const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
 
     console.log("Button Clicked");
 
@@ -136,7 +136,17 @@ button.addEventListener("click", async () => {
         eDiv.appendChild(eSpan);
         horoscopeData.appendChild(eDiv);
         let response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         let data = await response.json();
+
+        if (!data || !data.data) {
+            throw new Error("Invalid response format");
+        }
+
         signSign.innerText = selectedSign;
         dateDate.innerText = data.data.date;
         horoscopeData.innerText = data.data.horoscope;
