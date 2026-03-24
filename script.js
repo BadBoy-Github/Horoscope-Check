@@ -111,7 +111,7 @@ options.forEach(option => {
 });
 
 button.addEventListener("click", async () => {
-    const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(
+    const url = `https://corsproxy.io/?${encodeURIComponent(
         `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${selectedSign.toUpperCase()}&day=TODAY`
     )}`;
 
@@ -139,8 +139,8 @@ button.addEventListener("click", async () => {
         let data = await response.json();
         signSign.innerText = selectedSign;
         dateDate.innerText = data.data.date;
-        horoscopeData.innerText = data.data.horoscope_data;
-        console.log(data);
+        horoscopeData.innerText = data.data.horoscope;
+        console.log(data.data);
     }
     catch (error) {
         console.log("Error Getting Data");
